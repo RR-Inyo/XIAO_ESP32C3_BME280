@@ -274,10 +274,11 @@ void loop() {
 
   if (sw2Pushed) {
     // Toggle only if current GPIO_SW1 status is HIGH
-    // Reset!
+    // Reconnect to WiFi
     if (digitalRead(GPIO_SW2) == HIGH) {
       sw2Pushed = false;
-      ESP.restart();
+      lcd.clear();
+      connectWiFi();
     }
   }
 
